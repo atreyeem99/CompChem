@@ -1,0 +1,2 @@
+# CompChem
+compchem notes
