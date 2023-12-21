@@ -46,6 +46,23 @@ end
 end
 ```
 - `nproc 16` is to mention how many processors to be used
+## 4.3 To generate orbitals and SCF calculations
+```
+!HF DEF2-SVP LARGEPRINT
+%SCF
+   MAXITER 500
+END
+* xyz 0 1
+O   0.0000   0.0000   0.0626
+H  -0.7920   0.0000  -0.4973
+H   0.7920   0.0000  -0.4973
+*
+%pal nproc 4
+end
+```
+- Here `LARGEPRINT` is used to generate the orbitals
+- SCF ititrations goes upto 500
+- The x,y,z coordinates of water are written inside the input file
   
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
