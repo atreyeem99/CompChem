@@ -63,6 +63,15 @@ end
 - Here `LARGEPRINT` is used to generate the orbitals
 - SCF ititrations goes upto 500
 - The x,y,z coordinates of water are written inside the input file
-  
+
+## 4.3 DLPNO 
+```
+!DLPNO-CCSD(T) aug-cc-pVTZ AUTOAUX RIJCOSX
+* XYZFILE 0 1 geom_opt.xyz
+%pal nproc 16
+end
+```
+  - For calculationg the final single point energy
+  - coordinates of the optimized geometry is used
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
