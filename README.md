@@ -73,5 +73,9 @@ end
 ```
   - For calculationg the final single point energy
   - coordinates of the optimized geometry is used
+## 4.4 Thermodynamics at different temperatures
+```
+%FREQ TEMP 77, 298, 330, 450 END
+```
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
