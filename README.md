@@ -64,7 +64,25 @@ end
 - SCF ititrations goes upto 500
 - The x,y,z coordinates of water are written inside the input file
 
-## 4.3 DLPNO 
+## Single point Energy calculation
+` Lowest energy solution for the Schrodinger equation`
+1) Hartree Fock
+   ```
+   !HF DEF2-SVP
+   ```
+2) Unrestricted Hartree fock
+   `UHF` is used for ny multiplicity other than 1
+3)Acceleration of the SCF
+  ```
+!HF DEF2-SVP DEF2/J RIJDX
+```
+If it has no auxilliary basis, use `AUTOAUX` flag for automatic genre
+```
+!HF 6-31G(d,p) AUTOAUX RIJDX
+```
+   
+
+## 4.4 DLPNO 
 ```
 !DLPNO-CCSD(T) aug-cc-pVTZ AUTOAUX RIJCOSX
 * XYZFILE 0 1 geom_opt.xyz
@@ -73,9 +91,10 @@ end
 ```
   - For calculationg the final single point energy
   - coordinates of the optimized geometry is used
-## 4.4 Thermodynamics at different temperatures
+## 4.5 Thermodynamics at different temperatures
 ```
 %FREQ TEMP 77, 298, 330, 450 END
 ```
+## 
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
