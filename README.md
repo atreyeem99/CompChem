@@ -109,6 +109,12 @@ end
 ```
 %FREQ TEMP 77, 298, 330, 450 END
 ```
-## 
+## 4.6 Solvation models
+  1) CPCM
+     ```
+     !BP86 DEF2-SVP CPCM(WATER)
+     * XYZFILE 0 1 aspirin.xyz
+     ```
+     - The FINAL SINGLE POINT ENERGY now already includes all computed solvation terms. 
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
