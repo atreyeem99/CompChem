@@ -15,6 +15,10 @@
 ```
 
 # 3. Avogadro
+```
+wine avogadro
+```
+- used to open a file in avogadro
 
 # 4. Orca
 
@@ -80,6 +84,16 @@ If it has no auxilliary basis, use `AUTOAUX` flag for automatic genre
 ```
 !HF 6-31G(d,p) AUTOAUX RIJDX
 ```
+4)MP2 Purturbation theory
+```
+!RI-MP2 cc-pVTZ cc pVTZ/C
+```
+5) Coupled Cluster (cc)
+```
+!DLPNO-CCSD(T) cc-pVTZ cc-pVTZ/c
+```
+- Check the T1 diagnostic valuein the output file.
+- If it is greater than 0.02, the result is not good and HF reference is poor
    
 
 ## 4.4 DLPNO 
