@@ -115,6 +115,25 @@ end
      !BP86 DEF2-SVP CPCM(WATER)
      * XYZFILE 0 1 aspirin.xyz
      ```
-     - The FINAL SINGLE POINT ENERGY now already includes all computed solvation terms. 
+     - The FINAL SINGLE POINT ENERGY now already includes all computed solvation terms.
+
+  2) SMD
+  ```
+     %CPCM SMD TRUE
+      SMDSOLVENT "SOLVENT"
+    END
+         OR
+         
+!BP86 DEF2-SVP
+%CPCM SMD TRUE
+      SMDSOLVENT "WATER"
+END
+* XYZFILE 0 1 aspirin.xyz
+```
+- it uses the full solute electron density to compute the cavity-dispersion contribution instead of the area only.
+- less flexible
+
+## 4.7 Calculation of partition coeffecients
+
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
