@@ -157,6 +157,17 @@ END
 end
 ```
 From this the gibbs free energy of the compound with octanol as a solvent is calculated.
+         or
+```
+!wB97X-D3 DEF2-SVPD OPT NUMFREQ
+%CPCM SMD TRUE
+      SMDSOLVENT "1-OCTANOL"
+END
+* XYZ 0 1 geom.xyz
+```
+using wB97X-D3 and basis set of DEF2-SVPD
+ By the gibbs free energies from the output files of both, partition coefficient is calculated.
+ 
 
 
 
