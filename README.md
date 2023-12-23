@@ -135,5 +135,30 @@ END
 
 ## 4.7 Calculation of partition coeffecients
 
+ 1) water as solvent
+  ```
+!B3LYP DEF2-SVP OPT NUMFREQ D4
+%CPCM SMD TRUE
+      SMDSOLVENT "WATER"
+END
+* XYZ 0 1  geom.xyz
+%pal nproc 4
+end
+```
+From this the gibbs free energy of the compound with water as a solvent is calculated.
+2) Octanol as solvent
+```
+!B3LYP DEF2-SVP OPT NUMFREQ D4
+%CPCM SMD TRUE
+      SMDSOLVENT "1-OCTANOL"
+END
+* XYZFILE 0 1 geom.xyz
+%pal nproc 4
+end
+```
+From this the gibbs free energy of the compound with octanol as a solvent is calculated.
+
+
+
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
