@@ -167,6 +167,69 @@ END
 ```
 using wB97X-D3 and basis set of DEF2-SVPD
  By the gibbs free energies from the output files of both, partition coefficient is calculated.
+
+ ## Reaction
+   1) Tightly optimizing the reactant
+
+```      
+      B3LYP cc-pVDZ OPT FREQ TightSCF
+
+* XYZfile 0 1 prop_ox_opt.xyz
+
+%pal nproc 16
+end
+
+%geom
+ calc_hess true
+ recalc_hess 5
+ maxiter 50
+ convergence tight
+end
+```
+2) Tightly optimizing the product with proper conformer.
+```
+!B3LYP cc-pVDZ OPT FREQ TightSCF
+*XYZfile 0 1 acetone_ss.xyz
+%pal nproc 16
+end
+%geom
+ calc_hess true
+ recalc_hess 5
+ maxiter 50
+ convergence tight
+end
+```
+3) Finding the NEB-TS that is the transition state energy
+```
+!wB97X-D3 def2-TZVP NEB-TS FREQ
+%NEB NEB_END_XYZFILE "tight_opt_acetone_ss.xyz" END
+* XYZfile 0 1 tight_opt_prop_ox.xyz
+%pal nproc 16
+end
+```
+4) DLPNO calculation of reactant using the optimized geometry
+```
+!DLPNO-CCSD(T) def2-TZVP AUTOAUX RIJCOSX
+* XYZFILE 0 1 tight_opt_prop_ox.xyz
+%pal nproc 16
+end
+```
+5) DLPNO calculation of TS
+```
+!DLPNO-CCSD(T) def2-TZVP AUTOAUX RIJCOSX
+* XYZFILE 0 1 tight_opt_ts_acetone.xyz
+%pal nproc 16
+end
+```
+6) DLPNO calculations of product
+```
+!DLPNO-CCSD(T) def2-TZVP AUTOAUX RIJCOSX
+* XYZFILE 0 1 tight_opt_acetone_ss.xyz
+%pal nproc 16
+end
+```
+
+ 
  
 
 
