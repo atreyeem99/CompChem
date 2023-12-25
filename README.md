@@ -228,6 +228,35 @@ end
 %pal nproc 16
 end
 ```
+## 4.8 UV-VIS spectroscopy
+1) optimization of E isomer
+```
+!B3LYP DEF2-TZVP D4 OPT FREQ TightSCF CPCM(HEXANE)
+
+* XYZfile 0 1 E_final.xyz
+
+%pal nproc 16
+end
+
+%geom
+ calc_hess true
+ recalc_hess 5
+ maxiter 50
+ convergence tight
+end
+```
+2) Excited state calculation
+   ```
+   !B3LYP DEF2-TZVP TightSCF CPCM(HEXANE)
+%TDDFT
+   NROOTS   10
+   MAXITER 500
+END
+* XYZfile 0 1 E_azo_opt.xyz
+
+%pal nproc 16
+end
+```
 
  
  
