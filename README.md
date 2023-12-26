@@ -257,9 +257,38 @@ END
 %pal nproc 16
 end
 ```
+-From here we match the wavelength with experimental data.
+  Using wB97X-D3
+1)optimisation
+```
+ !wB97X-D3 DEF2-TZVP OPT FREQ TightSCF CPCM(HEXANE)
 
- 
- 
+* XYZfile 0 1 E_final.xyz
+
+%pal nproc 16
+end
+
+%geom
+ calc_hess true
+ recalc_hess 5
+ maxiter 50
+ convergence tight
+end
+```
+- Using TDA false for accurate results
+```
+!wB97X-D3 DEF2-TZVP TightSCF CPCM(HEXANE)
+%TDDFT
+   TDA  FALSE
+   NROOTS   10
+   MAXITER 500
+END
+* XYZfile 0 1 E_wB97XD3_opt.xyz
+
+%pal nproc 16
+end
+```
+
 
 
 
