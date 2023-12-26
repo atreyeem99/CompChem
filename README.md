@@ -236,7 +236,7 @@ end
 * XYZfile 0 1 E_final.xyz
 
 %pal nproc 16
-end
+end 
 
 %geom
  calc_hess true
@@ -245,8 +245,10 @@ end
  convergence tight
 end
 ```
+
 2) Excited state calculation
-   ```
+   
+```
    !B3LYP DEF2-TZVP TightSCF CPCM(HEXANE)
 %TDDFT
    NROOTS   10
@@ -260,6 +262,7 @@ end
 -From here we match the wavelength with experimental data.
   Using wB97X-D3
 1)optimisation
+
 ```
  !wB97X-D3 DEF2-TZVP OPT FREQ TightSCF CPCM(HEXANE)
 
