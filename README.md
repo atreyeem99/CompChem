@@ -291,7 +291,41 @@ END
 %pal nproc 16
 end
 ```
+## 5.0 NTOs
+1) optimisation of geometry usig tightSCF
+   ```
+   !wB97X-D3 DEF2-TZVP OPT FREQ TightSCF LARGEPRINT
 
+* XYZfile 0 1 hcho.xyz
+
+%pal nproc 16
+end
+
+%MAXCORE 4000
+
+%geom
+ calc_hess true
+ recalc_hess 5
+ maxiter 50
+ convergence tight
+end
+```
+2) For plotting NTO
+```
+!wB97X-D3 DEF2-TZVP TightSCF LARGEPRINT
+%TDDFT
+   NROOTS   10
+   TDA   FALSE
+   TRIPLETS FALSE
+   DONTO    TRUE
+END
+* XYZfile 0 1 hcho_opt.xyz
+
+%MAXCORE 4000
+
+%pal nproc 16
+end
+```
 
 
 
