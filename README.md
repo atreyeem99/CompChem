@@ -293,6 +293,7 @@ end
 ```
 ## 5.0 NTOs
 1) optimisation of geometry usig tightSCF
+
    ```
    !wB97X-D3 DEF2-TZVP OPT FREQ TightSCF LARGEPRINT
 
