@@ -294,7 +294,7 @@ end
 ## 5.0 NTOs
 1) optimisation of geometry usig tightSCF
 
-   ```
+```
    !wB97X-D3 DEF2-TZVP OPT FREQ TightSCF LARGEPRINT
 
 * XYZfile 0 1 hcho.xyz
@@ -311,6 +311,7 @@ end
  convergence tight
 end
 ```
+
 2) For plotting NTO
 ```
 !wB97X-D3 DEF2-TZVP TightSCF LARGEPRINT
@@ -325,6 +326,20 @@ END
 %MAXCORE 4000
 
 %pal nproc 16
+end
+```
+
+- Convert the output file into a cube file, then plot in avogadro
+
+## 5.1 Relativistic correlation
+
+```
+!B2PLYP ZORA SARC-ZORA-TZVP SARC/J AUTOAUX OPT
+* XYZ 0 1
+Hg 0 0 0
+Hg 0 0 3
+*
+%pal nproc 4
 end
 ```
 
