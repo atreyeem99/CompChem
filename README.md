@@ -116,8 +116,13 @@ end
      * XYZFILE 0 1 aspirin.xyz
      ```
      - The FINAL SINGLE POINT ENERGY now already includes all computed solvation terms.
+    
+  2) CPCM+COSMO
+     ```
+     !B3LYP DEF2-SVP CPCMC(WATER)
+     ```
 
-  2) SMD
+  4) SMD
   ```
      %CPCM SMD TRUE
       SMDSOLVENT "SOLVENT"
@@ -342,7 +347,7 @@ Hg 0 0 3
 %pal nproc 4
 end
 ```
-
+# 5.2 
 
 
 
