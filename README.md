@@ -349,7 +349,8 @@ end
 ```
 # 5.2 IRC 
 - to determine whether a transition state is directly connected to a given reactant and/or a product.
-  ```
+
+```
   !B3LYP DEF2-SVP D4 IRC SOSCF KDIIS
 * XYZfile 0 1 opt_ts.xyz
 
