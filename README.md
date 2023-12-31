@@ -357,6 +357,29 @@ end
 %pal nproc 16
 end
 ```
+## 5.3 Optimization using tightSCF, Tightopt and other necessary keywords
+```
+!wB97X-D3 RIJCOSX def2-TZVP def2/J TightSCF TightOpt xyzfile Freq
+
+%base "geom_DFT_S0"
+
+*xyzfile 0 1 geom_UFF.xyz
+
+%MaxCore 64000
+
+%scf
+  MaxIter 150
+end
+
+%pal nprocs 16
+end
+
+%geom
+  Calc_Hess true
+  Recalc_Hess 5
+  MaxIter 50
+end
+```
 
 
 
