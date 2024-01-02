@@ -380,6 +380,11 @@ end
   MaxIter 50
 end
 ```
+## 5.4 Fukui function optimisation
+```
+!B3LYP D3 DEF2-SVP OPT KEEPDENS
+* XYZFILE 0 1 butyrolactone_guess.xyz
+```
 
 
 
