@@ -1,6 +1,7 @@
 # Notes on ...
 
 # 1. Smiles
+ In the input file, write the structure `space` then name
 ```
     `filename.smi` is for saving smiles input
 ```
