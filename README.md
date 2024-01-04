@@ -43,7 +43,7 @@ end
 end
 
 ```
-- `TightSCF` is to tightly optimize the geometry
+- `TightSCF` is for tight convergence and to get the densities
 
 ## 4.2 To run a parallel calculation
 ```
@@ -386,7 +386,25 @@ end
 !B3LYP D3 DEF2-SVP OPT KEEPDENS
 * XYZFILE 0 1 butyrolactone_guess.xyz
 ```
+## 5.5 Excited state dynamics
+```
+!B3LYP DEF2-SVP TIGHTSCF ESD(ABS)
+%TDDFT NROOTS 5
+       IROOT  1
+END
+%ESD GSHESSIAN "opt_geom_UFF_gs.hess"
+     ESHESSIAN "opt_geom_UFF_es_s1.hess"
+     DOHT      TRUE
+END
+* XYZFILE 0 1 opt_geom_UFF_gs.xyz
 
+%MAXCORE 4000
+
+%pal nproc 16
+end
+```
+- here the gs hessian is obtained from the optimization of the initial geometry
+- the es hessian is optained by optimizing with the gs optimized geometry
 
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
