@@ -14,6 +14,10 @@
       obabel -oxyz filename.smi > filename.xyz --gen3d
        -  for generating x,y,z coordinates using obabel
 ```
+```
+        obabel -osdf filename.smi > filename.sdf --gen3d
+       -  for generating sdf file using obabel
+  ```
 
 # 3. Avogadro
 ```
