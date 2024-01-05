@@ -405,6 +405,25 @@ end
 ```
 - here the gs hessian is obtained from the optimization of the initial geometry
 - the es hessian is optained by optimizing with the gs optimized geometry
+## 5.4 Vertical gradient
+```
+!B3LYP DEF2-SVP TIGHTSCF ESD(ABS)
+%TDDFT NROOTS 5
+       IROOT 1
+END
+
+%ESD GSHESSIAN "opt_geom_UFF_gs.hess"
+     DOHT TRUE
+     HESSFLAG VG #DEFAULT
+END
+* XYZFILE 0 1 opt_geom_UFF_gs.xyz
+
+%MAXCORE 4000
+
+%pal nproc 16
+end
+```
+- This is the simplest model
 
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
