@@ -428,6 +428,25 @@ END
 end
 ```
 - This is the simplest model
+## 5.5 Adiabatic Hessian After Step (AHAS)
+```
+!B3LYP DEF2-SVP TIGHTSCF ESD(ABS)
+%TDDFT NROOTS 5
+       IROOT 1
+END
+
+%ESD GSHESSIAN "opt_geom_UFF_gs.hess"
+     DOHT TRUE
+     HESSFLAG AHAS
+END
+* XYZFILE 0 1 opt_geom_UFF_gs.xyz
+
+%MAXCORE 4000
+
+%pal nproc 16
+end
+```
+
 
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
