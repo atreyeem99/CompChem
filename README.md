@@ -446,6 +446,16 @@ END
 %pal nproc 16
 end
 ```
+## 5.6 Mentioning the point group in input
+```
+!B3LYP DEF2-TZVP FREQ
+* xyzfile 0 1 trans_butene.xyz
+%symmetry 
+  pointgroup "C1"
+end
+%pal nproc 16
+end
+```
 
 
 
