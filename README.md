@@ -456,7 +456,29 @@ end
 %pal nproc 16
 end
 ```
+## 5.7 TDDFT calculations using BOHRS for unit conversion
+```
+!SCS-PBE-QIDH RIJCOSX aug-cc-pVTZ  def2/J aug-cc-pVTZ/C TightSCF xyzfile bohrs
 
+%base "TDDFT"
 
+*xyzfile 0 1 comp_01.xyz
+
+%MaxCore 64000
+
+%scf
+  MaxIter 150
+end
+
+%pal nprocs 18
+end
+
+%tddft
+ nroots 6
+ tda false
+ triplets true
+ dcorr 1
+end
+```
 
 [Orca tutorials page](https://www.orcasoftware.de/tutorials_orca/)
